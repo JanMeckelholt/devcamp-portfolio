@@ -40,16 +40,23 @@ end
 def show
 end
 
+def destroy
+  @portfolio_item.destroy
+  redirect_to portfolios_path, notice: "Record was removed!"
+end
+
+
+
 
 
 private
 
 def set_portfolio_item
       @portfolio_item = Portfolio.find(params[:id])
-    end
+end
 
- def portfolio_params
+def portfolio_params
       params.require(:portfolio).permit(:title, :subtitle, :body)
-  end
+end
 
 end
