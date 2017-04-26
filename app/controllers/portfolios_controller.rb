@@ -37,6 +37,10 @@ def update
     end
 end
 
+def show
+end
+
+
 
 private
 

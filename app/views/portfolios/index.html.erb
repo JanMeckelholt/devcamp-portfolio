@@ -5,7 +5,7 @@
 
 
 <% @portfolio_items.each do |item| %>
-  <h3><%= item.title %></h3>
+  <h3><%= link_to item.title, portfolio_path(item.id) %></h3>
   <p><%= item.subtitle %></p>
   <p><%= item.body %></p>
   <% if item.thumb_image %> 
