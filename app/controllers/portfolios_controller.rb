@@ -6,6 +6,11 @@ def index
   @portfolio_items = Portfolio.all
 end
 
+def angular
+  @portfolio_angular_items = Portfolio.angular
+end
+
+
 def new
   @portfolio_item = Portfolio.new
 end
