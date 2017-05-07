@@ -17,6 +17,11 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+  
+  def copyright_generator
+    JanMeckelholtViewTool::Renderer.copyright 'Jan Meckelholt', 'All rights reserved'
+
+  end
 
 
 end
