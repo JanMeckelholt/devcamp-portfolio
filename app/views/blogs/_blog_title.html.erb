@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="blog-masthead">
+  <div class="container">
+    <div class="row">
+      
+        <div class="col-sm-8">
+        <nav class="nav blog-nav">
+          <%= render "shared/nav", style: 'nav-link' %>
+        </nav>
+        </div>   
+        
+        <div class="col-sm-4">
+        <nav class="nav blog-nav">
+          <%= login_helper("nav-link") %>
+        </nav>
+        </div>
+    
+    </div>
+  </div>
+</div>
+<div class="blog-header">
+  <div class="container">
+    <h1 class="blog-title">Blogs</h1>
+    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+  </div>
+</div>

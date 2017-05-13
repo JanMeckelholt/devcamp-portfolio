@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def login_helper(style)
+  def login_helper(style='')
     
 
     unless current_user.is_a?(GuestUser)
