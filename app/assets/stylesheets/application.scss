@@ -134,11 +134,12 @@ body {
 @media (min-width: 40em) {
   /* Pull out the header and footer */
   .masthead {
-   /* position: fixed; */
+    position: fixed; 
     top: 0;
+
   }
   .mastfoot {
-   /* position: fixed; */
+    position: fixed; 
     bottom: 0;
   }
   /* Start the vertical centering */
@@ -168,8 +169,16 @@ body {
  .card-block {
   color: black;
   text-align: left;
+  overflow: auto;
+  max-height: 80vh;
+
  }
 
  .auth-links a {
    color: black;
  }
+
+ .register-text {
+    text-align: right;
+ }
+
