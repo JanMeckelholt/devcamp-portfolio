@@ -1,14 +1,7 @@
 
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 blog-main">
-      <%= render 'blog_main' %>
-    </div><!-- /.blog-main -->
-    <div class="col-sm-3 offset-sm-1 blog-sidebar">
-      <%= render 'blog_sidebar' %>
-    </div>
-  </div>
-  <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin)%>
-</div>
+<%= render @blogs, layout: 'blog' %>
+<nav class="blog-pagination">
+  <a class="btn btn-outline-primary" href="#">Older</a>
+  <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+</nav>
+<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin)%>
