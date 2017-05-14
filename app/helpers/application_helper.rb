@@ -1,5 +1,42 @@
 module ApplicationHelper
 
+  def nav_items
+    [
+      {
+        url: root_path,
+        title: 'Home'
+      },
+      {
+        url: about_path,
+        title: 'About'
+      },
+      {
+        url: contact_path,
+        title: 'Contact'
+      },
+      {
+        url: blogs_path,
+        title: 'Blog'
+      },
+      {
+        url: portfolios_path,
+        title: 'Portfolio'
+      }
+    ]
+  end
+
+
+  def nav_helper style, tag_type
+    nav_links = ''
+    nav_items.each do |item|
+      nav_links << "<" + tag_type +">"+ (link_to item[:title], item[:url], class: style) + "</" + tag_type + ">"
+    end
+  
+    nav_links.html_safe
+    
+  end
+
+
   def login_helper(style1='', style2='')
     
     if style2 == ''
@@ -24,8 +61,12 @@ module ApplicationHelper
   
   def copyright_generator
     JanMeckelholtViewTool::Renderer.copyright 'Jan Meckelholt', 'All rights reserved'
-
   end
+
+  def active? path
+    "active" if current_page? path
+  end
+
 
 
 end
