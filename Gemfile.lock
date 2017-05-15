@@ -85,6 +85,9 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -232,6 +235,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2, >= 4.2.1)
   dotenv (~> 2.2, >= 2.2.1)
+  dotenv-rails
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
   friendly_id (~> 5.1.0)
   janmeckelholt_view_tool!
