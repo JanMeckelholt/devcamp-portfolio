@@ -68,5 +68,14 @@ module ApplicationHelper
   end
 
 
+  def alerts (alert_msg = nil)
+     alert_msg ||= (flash[:alert] || flash[:error] || flash[:notice])
+    
+    if alert_msg
+      js add_gritter(alert_msg, title: "Jan Meckelholt Portfolio", sticky: false)
+    end
+
+  end
+
 
 end

@@ -13,8 +13,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= render "shared/blog_masthead" %>
     
     <div class="container">
@@ -30,6 +28,7 @@
       <%= render '/shared/blog_footer' %>
     </div>
     
+    <%= alerts %>
 
   </body>
 </html>
