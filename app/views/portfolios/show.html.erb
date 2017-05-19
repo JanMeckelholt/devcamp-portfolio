@@ -13,7 +13,11 @@
       <% end %>
     </div>
   </div>
-  <%= link_to "Edit", edit_portfolio_path(@portfolio_item.id) if logged_in?(:site_admin) %>
-  <%= link_to "View all Portfolio-Items", portfolios_path %>
+
+  <% if logged_in?(:site_admin) %>
+  <%= link_to "Edit", edit_portfolio_path(@portfolio_item.id), class: 'btn btn-warning'  %>
+
+  <% end %>
+  <%= link_to "View all Portfolio-Items", portfolios_path, class: 'btn btn-primary' %>
 </div>
 
