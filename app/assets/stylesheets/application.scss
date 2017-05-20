@@ -169,8 +169,8 @@ body {
 .card-block {
   color: black;
   text-align: left;
-  overflow: auto;
-     max-height: 80vh;
+ /* overflow: auto;
+     max-height: 80vh;*/
 }
 
 .auth-links a {
@@ -227,9 +227,13 @@ body {
 
 
 
-.inner {
+.application-content {
     overflow: auto;
+    overflow-x: hidden;
+
     max-height: 80vh;
+   
+    display: block;
    }
 
 
@@ -238,4 +242,11 @@ body {
     margin-right: auto;
     margin-left: auto;
  }
+
+ .clearfix:after {
+content: "";
+display: table;
+clear: both;
+}
+
 
