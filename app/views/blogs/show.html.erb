@@ -9,19 +9,8 @@
   <%= @blog.body %>
 </p>
 
-<!-- Start Form Comments -->
 
-<% unless current_user.is_a? GuestUser %>
-  <%= form_for @comment, url: '#' do |f| %>
-    <div class="form-group">
-      <%= f.label :content %>
-      <%= f.text_area :content, class: 'form-control' %>
-    </div>
-    <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
-<!-- End Form Comments -->
-
+<%= render "comments/comment_form" %>
 <!-- Start Display Comments -->
 <%= render @blog.comments %>
 
