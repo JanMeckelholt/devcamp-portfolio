@@ -6,16 +6,15 @@
 
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-    <meta name="keywords" content="<%= @seo_keywords %>" /> 
 
-
+    <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-   <div class="site-wrapper">
+    <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
@@ -27,10 +26,9 @@
               muted: true,
               poster: 'home_bg.png'
             )
-          %>
+            %>
 
           <%= render "shared/application_nav" %>
-
 
           <%= yield %>
 
@@ -38,9 +36,8 @@
 
           <%= alerts %>
 
-          <%= source_helper("main") %>
-          
-        
+          <%= source_helper("application") %>
+
         </div>
       </div>
     </div>
