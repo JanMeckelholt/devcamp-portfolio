@@ -15,9 +15,9 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
       if @topic.save
-        redirect_to @topics, notice: 'Topic was successfully created.'
+        redirect_to topics_path, notice: 'Topic was successfully created.'
       else
-        redirect_to @topics, notice: 'Topic could not be created.'
+        redirect_to topics_path, notice: 'Topic could not be created.'
         
       end
   end
@@ -35,6 +35,8 @@ class TopicsController < ApplicationController
   end
 
   def destroy
+    @topic.destroy
+    redirect_to topics_path, notice: 'Blog was successfully destroyed.'
   end
 
 private

@@ -6,17 +6,17 @@
       <div class="col-md-1">
         <%= t.id  %>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <%= t.title %>
       </div>
-      <div class="col-md-3">
-        <%= link_to 'Edit Topic', edit_topic_path(t) %>
+      <div class="col-md-5">
+        <span edit-delete>
+          <%= link_to 'Edit Topic', edit_topic_path(t), class: 'btn btn-primary' %>
+          <%= link_to 'Delete Topic', topic_path(t), method: 'delete', data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+        </span>
       </div>
     </div>
   </div>
-
-
- 
-
-
 <% end %>
+
+<%= link_to 'Add new Topic', new_topic_path, class: 'btn btn-primary'%>
