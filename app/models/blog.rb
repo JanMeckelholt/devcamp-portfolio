@@ -16,4 +16,10 @@ class Blog < ApplicationRecord
     order("created_at DESC")
   end
 
+  def self.published
+     where(status: :published)
+  end
+  def self.draft
+     where(status: :draft)
+  end
 end

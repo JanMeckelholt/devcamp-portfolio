@@ -1,7 +1,15 @@
 
+<% if logged_in?(:site_admin) %>
+<%  blogs = @blogs_all %>
+<% else %>
+<% blogs = @blogs_published %>
+<% end %>
+
+
+
 <%= link_to 'Wirte a new Blog', new_blog_path if logged_in?(:site_admin)%>
-<%= paginate @blogs %>
-<%= render @blogs, layout: 'blog' %>
-<%= paginate @blogs %>
+<%= paginate blogs %>
+<%= render blogs, layout: 'blog' %>
+<%= paginate blogs %>
 
 

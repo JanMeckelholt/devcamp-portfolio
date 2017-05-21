@@ -35,12 +35,17 @@ class TopicsController < ApplicationController
   end
 
   def destroy
+    @topic.blogs.each do |b|
+      b.update!(topic_id: 1)
+    end
     @topic.destroy
     redirect_to topics_path, notice: 'Blog was successfully destroyed.'
   end
 
 private
     # Use callbacks to share common setup or constraints between actions.
+  
+
     def set_topic
       @topic = Topic.find(params[:id])
     end

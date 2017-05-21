@@ -1,22 +1,49 @@
 <h3>Topics</h3>
-<% @topics.each do |t| %>
+
+<table class="form-group topics-form">
+  <tr>
+<!--     <th>ID</th> -->
+    <th> Topic </th>
+    <th>Blogs</th>
+    <th></th>
+  </tr>
   
-  <div class="form-group">
-    <div class="row">
-      <div class="col-md-1">
-        <%= t.id  %>
-      </div>
-      <div class="col-md-6">
-        <%= t.title %>
-      </div>
-      <div class="col-md-5">
-        <span edit-delete>
+
+  <% @topics.drop(1).each do |t| %>
+    <tr>
+      <!-- <td><div class="topics-item centered"><%= t.id %></div></td> -->
+      <td><div class="topics-item"> <%= t.title %> </div></td>
+      <td><div class="topics-item centered"><%= t.blogs.count %></div></td>
+      <td>
+        <div class="edit-delete">
           <%= link_to 'Edit Topic', edit_topic_path(t), class: 'btn btn-primary' %>
           <%= link_to 'Delete Topic', topic_path(t), method: 'delete', data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
-        </span>
-      </div>
-    </div>
-  </div>
-<% end %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  <tr>
+   <!--  <td><div class="topics-item centered first-topic"><%= @topics.first.id %></div></td> -->
+    <td><div class="topics-item first-topic"> <%= @topics.first.title %> </div></td>
+    <td><div class="topics-item centered first-topic"><%= @topics.first.blogs.count %></div></td>
+    <td></td>
+  </tr>
+
+</table>
+
 
 <%= link_to 'Add new Topic', new_topic_path, class: 'btn btn-primary'%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
