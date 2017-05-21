@@ -1,0 +1,22 @@
+<h3>Topics</h3>
+<% @topics.each do |t| %>
+  
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-1">
+        <%= t.id  %>
+      </div>
+      <div class="col-md-8">
+        <%= t.title %>
+      </div>
+      <div class="col-md-3">
+        <%= link_to 'Edit Topic', edit_topic_path(t) %>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+
+<% end %>

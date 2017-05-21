@@ -4,4 +4,8 @@ class Topic < ApplicationRecord
 
   has_many :blogs
 
+  def self.sort_by_id
+    order("id ASC")
+  end
+
 end
