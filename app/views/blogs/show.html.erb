@@ -12,7 +12,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @blog.body %>
+  <%= markdown @blog.body %>
 </p>
 
 <%= link_to 'Edit Blogpost', edit_blog_path(@blog), class: 'btn btn-warning' if logged_in?(:site_admin)%> 
