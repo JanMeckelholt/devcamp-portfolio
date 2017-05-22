@@ -5,10 +5,18 @@
 </p>
 
 <p>
+  <italics>Topic: <%= Topic.find(@blog.topic_id).title %> </italics>
+</p>
+
+
+
+<p>
   <strong>Body:</strong>
   <%= @blog.body %>
 </p>
 
+<%= link_to 'Edit Blogpost', edit_blog_path(@blog), class: 'btn btn-warning' if logged_in?(:site_admin)%> 
+<%= link_to 'Back to Overview', blogs_path, class: 'btn btn-primary' %> 
 
 <%= render "comments/comment_form" %>
 <!-- Start Display Comments -->
@@ -16,8 +24,6 @@
   <%= render @blog.comments %>
 </div>
 
-<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin)%> 
-<%= " | " if logged_in?(:site_admin) %>
-<%= link_to 'Back', blogs_path %> <br>
 
+<%= link_to 'Back to Overview', blogs_path, class: 'btn btn-primary' %> 
 

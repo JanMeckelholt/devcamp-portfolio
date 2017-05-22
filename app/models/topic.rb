@@ -8,4 +8,11 @@ class Topic < ApplicationRecord
     order("id ASC")
   end
 
+  def self.with_blogs
+    includes(:blogs).where.not(blogs: {id: nil})
+  end
+
+  def self.with_blogs_published
+    includes(:blogs).where.not(blogs: {id: nil} && {status: 'draft'})
+  end
 end

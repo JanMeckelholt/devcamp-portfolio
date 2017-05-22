@@ -1,0 +1,4 @@
+<h1>Topic: <%= @topic.title %></h1>
+<%= paginate @topic_blogs %>
+<%= render @topic_blogs, layout: 'blog' %>
+<%= paginate @topic_blogs %>

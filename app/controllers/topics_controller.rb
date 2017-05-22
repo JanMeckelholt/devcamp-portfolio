@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:edit, :update, :destroy]
+  before_action :set_topic, only: [:edit, :update, :destroy, :show]
   before_action :set_topics, only: [:index, :update]
+  before_action :set_sidebar_topics
   
   layout "blog"
 
@@ -11,6 +12,14 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
 
+  def show
+  if logged_in?(:site_admin) 
+      @topic_blogs = @topic.blogs.by_created_at.page(params[:page]).per(5)  
+    else
+      @topic_blogs = @topic.blogs.published.by_created_at.page(params[:page]).per(5)
+    end
+
+  end
 
   def create
     @topic = Topic.new(topic_params)
@@ -52,6 +61,14 @@ private
 
     def set_topics
       @topics = Topic.all.sort_by_id
+    end
+
+    def set_sidebar_topics
+      if logged_in?(:site_admin) 
+        @sidebar_topics = Topic.with_blogs
+      else
+        @sidebar_topics = Topic.with_blogs_published
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
