@@ -228,12 +228,12 @@ body {
 
 
 .application-content {
-    overflow: auto;
-    overflow-x: hidden;
+    /*overflow: auto;
+    overflow-x: hidden;*/
 
-    max-height: 80vh;
+  /*  max-height: 80vh;*/
    
-    display: block;
+    /*display: block;*/
    }
 
 
@@ -243,10 +243,27 @@ body {
     margin-left: auto;
  }
 
- .clearfix:after {
+/* .clearfix:after {
 content: "";
 display: table;
 clear: both;
+}*/
+
+.app-card-container {
+  color: black;
+  text-align: left;
+  margin: 50px;
 }
 
+.app-card-container > .card {
+  padding: 40px;
+}
 
+.app-card-container > .card a {
+  color: blue;
+}
+
+.profile-img {
+  border: 1px solid grey;
+  border-radius: 25px;
+}
